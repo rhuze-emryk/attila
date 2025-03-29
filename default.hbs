@@ -90,27 +90,33 @@
                 <section class="page-wrapper">
 
                         {{{body}}}
+{{!-- Start Modified Footer --}}
+<div class="nav-footer">
+    <nav class="nav-wrapper" aria-label="{{t "Footer"}}">
+        <div class="nav-copy" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; padding: 10px 0;">
+            {{!-- Left Section: Copyright + RSS --}}
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <span class="nav-title">{{@site.title}} © {{date format='YYYY'}}</span>
+                <a href="{{@site.url}}/rss/" aria-label="RSS Feed" title="RSS" style="display: inline-flex; align-items: center;">
+                    {{!-- Add RSS icon --}}
+                    <svg style="width: 18px; height: 18px; margin-left: 5px;" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 20.001C19 11.729 12.271 5 4 5v2c7.168 0 13 5.832 13 13.001h2zm-7 0c0-3.313-2.687-6-6-6v2c2.206 0 4 1.794 4 4h2zm-6 0c0-1.103.897-2 2-2v2h-2z"/>
+                    </svg>
+                </a>
+            </div>
 
-                        {{!-- Start Modified Footer (Improved Structure) --}}
-                        <div class="nav-footer">
-                                <nav class="nav-wrapper" aria-label="{{t "Footer"}}">
-                                        {{!-- Combine Copyright, RSS, and CC License in one span using Flexbox --}}
-                                        <span class="nav-copy" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; width: 100%; gap: 10px;"> {{!-- Added gap for spacing --}}
-                                                {{!-- Left Side: Copyright & RSS --}}
-                                                <span style="flex-shrink: 0;"> {{!-- Prevent shrinking --}}
-                                                        <span class="nav-title">{{@site.title}} © {{date format='YYYY'}}</span>
-                                                        <a aria-label="RSS" href="{{@site.url}}/rss/" title="RSS" style="margin-left: 5px; vertical-align: middle;"><i class="icon icon-rss" aria-hidden="true">{{> "icons/icon-rss"}}</i></a>
-                                                </span>
-
-                                                {{!-- Right Side: Creative Commons License --}}
-                                                <span class="cc-license" style="font-size: 0.8rem; opacity: 0.8; text-align: right; flex-shrink: 0;"> {{!-- Adjust font-size/opacity if needed; Prevent shrinking --}}
-                                                    Content licensed under <a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International License</a>.
-                                                </span>
-                                        </span>
-                                        {{!-- Removed other elements like secondary nav, credits etc. --}}
-                                </nav>
-                        </div>
-                        {{!-- End Modified Footer --}}
+            {{!-- Right Section: Creative Commons --}}
+            <div style="display: flex; align-items: center; gap: 8px; font-size: 0.9em;">
+                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/" target="_blank" style="display: inline-block;">
+                    {{!-- CC License Image --}}
+                    <img alt="Creative Commons License" style="height: 22px; width: auto;" src="https://licensebuttons.net/l/by/4.0/88x31.png"/>
+                </a>
+                <span style="opacity: 0.9;">Content licensed under<br><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a></span>
+            </div>
+        </div>
+    </nav>
+</div>
+{{!-- End Modified Footer --}}
 
                 </section>
         </div>
