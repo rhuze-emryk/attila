@@ -91,26 +91,23 @@
 
                         {{{body}}}
 
-                        {{!-- Start Modified Footer --}}
+                        {{!-- Start Modified Footer (Improved Structure) --}}
                         <div class="nav-footer">
                                 <nav class="nav-wrapper" aria-label="{{t "Footer"}}">
-                                        {{!-- Copyright and Built-in RSS --}}
-                                        <span class="nav-copy">
-                                                <span class="nav-title">{{@site.title}} © {{date format='YYYY'}}</span>
-                                                <a aria-label="RSS" href="{{@site.url}}/rss/" title="RSS"><i class="icon icon-rss" aria-hidden="true">{{> "icons/icon-rss"}}</i></a>
-                                                {{!-- Removed Twitter and Facebook links --}}
+                                        {{!-- Combine Copyright, RSS, and CC License in one span using Flexbox --}}
+                                        <span class="nav-copy" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; width: 100%; gap: 10px;"> {{!-- Added gap for spacing --}}
+                                                {{!-- Left Side: Copyright & RSS --}}
+                                                <span style="flex-shrink: 0;"> {{!-- Prevent shrinking --}}
+                                                        <span class="nav-title">{{@site.title}} © {{date format='YYYY'}}</span>
+                                                        <a aria-label="RSS" href="{{@site.url}}/rss/" title="RSS" style="margin-left: 5px; vertical-align: middle;"><i class="icon icon-rss" aria-hidden="true">{{> "icons/icon-rss"}}</i></a>
+                                                </span>
+
+                                                {{!-- Right Side: Creative Commons License --}}
+                                                <span class="cc-license" style="font-size: 0.8rem; opacity: 0.8; text-align: right; flex-shrink: 0;"> {{!-- Adjust font-size/opacity if needed; Prevent shrinking --}}
+                                                    Content licensed under <a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International License</a>.
+                                                </span>
                                         </span>
-
-                                        {{!-- Removed Secondary Navigation --}}
-
-                                        {{!-- START: Added Creative Commons License --}}
-                                        <div class="custom-footer-info" style="font-size: 0.8rem; opacity: 0.7; padding-top: 5px; text-align: center;"> 
-                                            {{!-- Using inline style for simplicity, adjust font-size/opacity as needed --}}
-                                            Content licensed under <a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International License</a>.
-                                        </div>
-                                        {{!-- END: Added Creative Commons License --}}
-
-                                        {{!-- Removed the original nav-credits span --}}
+                                        {{!-- Removed other elements like secondary nav, credits etc. --}}
                                 </nav>
                         </div>
                         {{!-- End Modified Footer --}}
